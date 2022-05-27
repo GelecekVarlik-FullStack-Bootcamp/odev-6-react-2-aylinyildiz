@@ -1,15 +1,11 @@
-# Week - NULL
-```Hafta veya Ödev Sayısı (NULL değiştir)```
-
-# Homework 
-```Ödev```
+# Hafta 6 - ReactJs
 
 
-## Homework Description
+## Ödev İçeriği
+* Todolar
+* Kategoriler
+* Statüler
 
-```Ödev Açıklaması ```
 
 
-## Author
-
-```Ödevi yapan```
+## Aylin Yıldız
