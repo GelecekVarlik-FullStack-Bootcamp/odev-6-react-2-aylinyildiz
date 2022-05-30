@@ -9,6 +9,7 @@ const Styled = styled.div`
     background-color: #5393ff;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 
@@ -20,6 +21,7 @@ const Styled = styled.div`
     background-color: #5393ff;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 input{
     width:60%

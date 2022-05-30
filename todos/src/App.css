@@ -7,6 +7,7 @@
     border: none;
     margin: 5px;
     border-radius: 8px;
+    cursor: pointer;
 }
 input{
   width: auto;

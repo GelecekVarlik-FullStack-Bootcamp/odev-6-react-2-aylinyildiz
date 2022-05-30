@@ -9,8 +9,14 @@ const getById = (id) =>{
     return axios.get(API_URL + id ,{headers:authHeader()})
 }
 
+
+const getList = (id) =>{
+    return axios.get(API_URL + "?categoryId=" +id, {headers:authHeader() })
+}
+
 const statusService={
-    getById
+    getById,
+    getList
 }
 
 export default statusService

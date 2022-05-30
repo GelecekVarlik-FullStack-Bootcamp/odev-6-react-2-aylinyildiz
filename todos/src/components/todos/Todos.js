@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import CategoryService from "../../services/category.service";
 import TodosService from "../../services/todos.service";
 import TodoList from "./TodoList";
+import StatusService from "../../services/status.service";
 
-function Todos() {
+function Todos({}) {
   const [todo, setTodo] = useState("");
   const [categories, setCategories] = useState([]);
+  const [status, setStatus] = useState([]);
   const handleChange = e => setCategories(e.target.value);
   useEffect(() => {
     CategoryService.getList().then(
@@ -17,7 +19,19 @@ function Todos() {
         console.log(error);
       }
     );
-  }, []);
+   
+    StatusService.getList(1).then(
+      
+      (response) => {
+        setStatus(response.data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    
+
+  }, [{category:categories, status:status}]);
   
   const handleAddTodos = async (e) =>{
     e.preventDefault();
@@ -42,17 +56,19 @@ function Todos() {
           <select>
             <option value="0">Kategoriler</option>
             {categories.map((category, index) => (
-              <option value={index} onChange={handleChange}>{category.title}</option>
+              <option value={category.id} onChange={handleChange}>{category.title}</option>
+             
             ))}
+           
           </select>
 
           <select>
             <option value="0" >
               Status
             </option>
-            {/* {categories.map((category, index) => (
-              <option value={index}>{category.title}</option>
-            ))} */}
+            {status.map((category, index) => (
+              <option value={category.id}>{category.title}</option>
+            ))}
           </select>
           <button type="submit" className="btnadd">Ekle</button>
         </form>

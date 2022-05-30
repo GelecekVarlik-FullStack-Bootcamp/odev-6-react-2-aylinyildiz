@@ -21,6 +21,7 @@ li{
     background-color: #5393ff;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .btnadd{
@@ -31,6 +32,7 @@ li{
     background-color: #5393ff;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 input{
     width:30%

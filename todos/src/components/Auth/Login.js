@@ -2,7 +2,7 @@ import { useState } from "react";
 import authService from "../../services/auth.service";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({setIslogged}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,13 +13,15 @@ const Login = () => {
     try {
       await authService.login(username, password).then(
         () => {
-          navigate("/home");
+          navigate("/todos");
           window.location.reload();
         },
         (error) => {
           console.log(error);
         }
+        
       );
+      setIslogged(true)
     } catch (err) {
       console.log(err);
     }
